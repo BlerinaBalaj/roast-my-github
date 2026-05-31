@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roast My GitHub 🔥</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-icon">🔥</div>
+      <h1 class="site-title">Roast My GitHub</h1>
+      <p class="site-subtitle">Enter a username. Get destroyed.</p>
+    </header>
+
+    <!-- Form card -->
+    <main class="main-content">
+      <section class="form-card" id="formSection">
+        <div class="form-group">
+          <label for="usernameInput" class="form-label">GitHub Username</label>
+          <div class="input-row">
+            <span class="input-prefix">github.com /</span>
+            <input
+              type="text"
+              id="usernameInput"
+              class="form-input"
+              placeholder="torvalds"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="styleSelect" class="form-label">Roast Style</label>
+          <select id="styleSelect" class="form-select">
+            <option value="classic">🧑‍💻 Classic Developer</option>
+            <option value="corporate">💼 Corporate Buzzwords</option>
+            <option value="pirate">🏴‍☠️ Pirate</option>
+            <option value="shakespeare">📜 Shakespeare</option>
+            <option value="haiku">🌸 Haiku</option>
+          </select>
+        </div>
+
+        <button id="roastBtn" class="roast-btn">
+          <span class="btn-text">Roast Me</span>
+          <span class="btn-icon">🔥</span>
+        </button>
+      </section>
+
+      <!-- Loading state -->
+      <section class="loading-card hidden" id="loadingSection">
+        <div class="loading-header">
+          <div class="spinner"></div>
+          <p class="loading-title">Analyzing profile<span class="dots"></span></p>
+        </div>
+        <div class="loading-feed" id="loadingFeed"></div>
+        <div class="loading-bar-track"><div class="loading-bar" id="loadingBar"></div></div>
+      </section>
+
+      <!-- Error state -->
+      <section class="error-card hidden" id="errorSection">
+        <div class="error-icon">😬</div>
+        <p class="error-message" id="errorMessage">Something went wrong.</p>
+        <button class="try-again-btn" id="tryAgainBtn">Try Again</button>
+      </section>
+
+      <!-- Result state -->
+      <section class="result-card hidden" id="resultSection">
+        <!-- Stats bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-value" id="statRepos">—</span>
+            <span class="stat-label">Repos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value" id="statStars">—</span>
+            <span class="stat-label">Stars</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value" id="statLang">—</span>
+            <span class="stat-label">Top Language</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value" id="statForks">—</span>
+            <span class="stat-label">Forks</span>
+          </div>
+        </div>
+
+        <!-- Roast text -->
+        <div class="roast-header">
+          <span class="roast-flame">🔥</span>
+          <span class="roast-username" id="roastUsername">username</span>
+          <span class="roast-flame">🔥</span>
+        </div>
+        <div class="roast-body" id="roastBody"></div>
+
+        <button class="roast-again-btn" id="roastAgainBtn">Roast Again</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Roasts are fictional entertainment. Be kind IRL.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
